@@ -27,7 +27,8 @@ from lr1.stats import kv_bytes_per_token, linear_fit  # noqa: E402
 from lr1.tracking import read_results, setup_mlflow  # noqa: E402
 
 OUT = ROOT / "report"
-SERIES = {"exp1": "exp1_ttft_vs_prompt", "exp2": "exp2_latency_vs_output", "exp3": "exp3_load"}
+SERIES = {"exp1": "exp1_ttft_vs_prompt", "exp2": "exp2_latency_vs_output", "exp3": "exp3_load_v2"}
+FIRST_ATTEMPT = "exp3_load"  # первая серия эксперимента 3: две записи упали из-за ошибки клиента (см. отчёт)
 BLUE, ORANGE, GREEN, RED = "#1f77b4", "#ff7f0e", "#2ca02c", "#d62728"
 
 

@@ -101,6 +101,19 @@ def exp2(ctx):
             log(f"N={n_out} #{i}: out={rec['output_tokens']} e2e={rec['e2e_s']} tpot={rec['tpot_s']} {rec['status']}")
 
 
+async def run_level(base_url, model, jobs, c, max_tokens):
+    """Клиент создаётся и закрывается внутри цикла событий этого уровня.
+
+    Ошибка первой серии (exp3_load): один AsyncOpenAI жил между вызовами asyncio.run, и первый
+    запрос каждого следующего уровня падал с «Event loop is closed» ещё до обращения к серверу.
+    """
+    aclient = make_aclient(base_url)
+    try:
+        return await run_load(aclient, model, jobs, c, max_tokens)
+    finally:
+        await aclient.close()
+
+
 def sample_metrics(base_url, stop, samples):
     while not stop.is_set():
         try:
@@ -113,7 +126,6 @@ def sample_metrics(base_url, stop, samples):
 def exp3(ctx):
     cfg = ctx.cfg
     warmup(ctx, cfg["prompt_tokens"], "warm-e3")
-    aclient = make_aclient(ctx.ep["base_url"])
     for c in cfg["concurrency_levels"]:
         n_req = max(cfg["min_requests"], 4 * c)
         jobs = []
@@ -127,7 +139,7 @@ def exp3(ctx):
         th = threading.Thread(target=sample_metrics, args=(ctx.ep["base_url"], stop, samples), daemon=True)
         th.start()
         log(f"уровень c={c}: {n_req} запросов")
-        results = asyncio.run(run_load(aclient, ctx.model, jobs, c, cfg["max_tokens"]))
+        results = asyncio.run(run_level(ctx.ep["base_url"], ctx.model, jobs, c, cfg["max_tokens"]))
         stop.set(); th.join()
         after = scrape_metrics(ctx.ep["base_url"])
         by_id = {j["id"]: j for j in jobs}
