@@ -1,0 +1,7 @@
+# Эксперимент 2: длина ответа и скорость генерации (1 слот, ignore_eos).
+experiment: lr1
+series: exp2_latency_vs_output
+prompt_tokens: 1024
+output_lengths: [16, 64, 256, 1024]
+repeats: 5
+server_slots: 1

@@ -1,0 +1,14 @@
+# Адрес сервера модели и параметры генерации по умолчанию (используются в ЛР2–ЛР8).
+# Профиль CPU: llama.cpp (llama-server), Qwen3-4B-Instruct-2507 в GGUF Q4_K_M.
+base_url: http://localhost:8080/v1
+model: Qwen3-4B-Instruct-2507      # llama-server принимает любое имя; точный файл — в паспорте сервера
+api_key_env: null                  # ключ не нужен (локальный сервер); для внешнего API — имя переменной окружения
+generation:
+  temperature: 0                   # всегда передаётся явно: умолчание сервера берётся из generation_config модели (0,7)
+  max_tokens: 256
+server:
+  context: 8192                    # -c; на 8 ГБ ОЗУ контекст 16384 из методички не помещается (см. отчёт)
+  slots: 1                         # 1 в экспериментах 1–2, 4 в эксперименте 3
+  threads: 4
+  port: 8080
+  model_path: models/Qwen_Qwen3-4B-Instruct-2507-Q4_K_M.gguf

@@ -1,0 +1,16 @@
+# окружение
+.venv/
+__pycache__/
+.pytest_cache/
+
+# сервер и модель (источник и SHA-256 записаны в паспорте сервера)
+models/
+tools/
+
+# артефакты запусков и журнал (сдаются отдельно архивом)
+runs/
+runs_debug/
+mlruns/
+mlflow.db
+logs/
+lr1_artifacts.zip

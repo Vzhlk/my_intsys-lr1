@@ -1,0 +1,21 @@
+{
+  "datasets": {
+    "pride_and_prejudice": {
+      "source": "Project Gutenberg eBook № 1342, Jane Austen, Pride and Prejudice (общественное достояние)",
+      "url": "https://www.gutenberg.org/cache/epub/1342/pg1342.txt",
+      "raw_file": "data/pg1342.txt",
+      "raw_sha256": "3f6bb9d6f78e0293b56acd4714dd68cb7d6d1d293402031ce9d5a216bcaf9d75",
+      "raw_size_bytes": 772386,
+      "selection_rule": "текст между строками «*** START OF …» и «*** END OF …», \\r\\n -> \\n, обрезка пробелов по краям",
+      "body_file": "data/pride_and_prejudice.txt",
+      "body_sha256": "ec5006ab5edb21cf0ee304712665ef03a8a96bc5ef2e8bb70877dca86973d79c",
+      "body_size_bytes": 737914,
+      "body_chars": 728714,
+      "records_total": 1,
+      "records_used": 1,
+      "excluded": 0,
+      "excluded_reason": "нет",
+      "use": "нарезка запросов нужной длины в токенах сервера (lr1/prompts.py)"
+    }
+  }
+}

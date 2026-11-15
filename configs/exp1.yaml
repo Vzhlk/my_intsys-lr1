@@ -1,0 +1,9 @@
+# Эксперимент 1: длина запроса и TTFT (профиль CPU: 1 слот, кеш префикса выключен).
+experiment: lr1
+series: exp1_ttft_vs_prompt
+lengths: [128, 512, 1024, 2048, 4096]   # токены запроса после шаблона диалога
+repeats: 5                               # запросов на длину
+max_tokens: 16
+prefix_cache_length: 2048                # длина запроса для проверки кеширования префикса
+prefix_cache_repeats: 3
+server_slots: 1
