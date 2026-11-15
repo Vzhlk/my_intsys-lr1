@@ -1,0 +1,8 @@
+experiment: lr1
+series: debug_exp1
+lengths: [64, 256]
+repeats: 2
+max_tokens: 8
+prefix_cache_length: 256
+prefix_cache_repeats: 3
+server_slots: 1

@@ -1,0 +1,28 @@
+{
+  "exact_64_tokens": {
+    "completion_tokens": 64,
+    "ok": true
+  },
+  "temperature_0_repeat": {
+    "identical": true,
+    "sha256": [
+      "be5fbc0517364a99576a402da7f4f2b55ec74f049ad1b2524de57898310b4678",
+      "be5fbc0517364a99576a402da7f4f2b55ec74f049ad1b2524de57898310b4678"
+    ],
+    "tokens": [
+      48,
+      48
+    ]
+  },
+  "prompt_length_1024": {
+    "tokenized": 1024,
+    "usage_prompt_tokens": 1024,
+    "ok": true
+  },
+  "kv_cache": {
+    "n_ctx_total_tokens": 8192,
+    "calc_mib": 1152.0,
+    "log_context_mib": 1152,
+    "ok": true
+  }
+}

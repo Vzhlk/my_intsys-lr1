@@ -153,11 +153,12 @@ def main():
     p.add_argument("--server-log", required=True)
     p.add_argument("--command", required=True, help="команда запуска сервера (со всеми флагами)")
     p.add_argument("--series-suffix", default="", help="суффикс имени серии (например, для повтора)")
+    p.add_argument("--config", help="файл конфигурации эксперимента (по умолчанию configs/exp<N>.yaml)")
     p.add_argument("--debug", action="store_true")
     args = p.parse_args()
 
     ep = yaml.safe_load(open("endpoint.yaml", encoding="utf-8"))
-    cfg = yaml.safe_load(open(f"configs/exp{args.exp}.yaml", encoding="utf-8"))
+    cfg = yaml.safe_load(open(args.config or f"configs/exp{args.exp}.yaml", encoding="utf-8"))
     cfg["series"] += args.series_suffix
     commit, dirty = git_commit(), git_dirty()
     if not args.debug:

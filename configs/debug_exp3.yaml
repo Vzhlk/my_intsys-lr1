@@ -1,0 +1,8 @@
+experiment: lr1
+series: debug_exp3
+prompt_tokens: 128
+max_tokens: 16
+concurrency_levels: [1, 2]
+min_requests: 4
+limits: {ttft_p90_s: 60.0, tpot_median_s: 0.30}
+server_slots: 4
