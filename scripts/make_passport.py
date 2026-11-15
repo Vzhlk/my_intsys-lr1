@@ -65,7 +65,7 @@ def main():
         "",
     ]
     Path("report/server_passport.md").write_text("\n".join(lines), encoding="utf-8")
-    print("\n".join(lines))
+    print("report/server_passport.md written")
 
 
 if __name__ == "__main__":
