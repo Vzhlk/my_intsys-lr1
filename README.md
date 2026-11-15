@@ -9,7 +9,7 @@
 
 CPU: `llama.cpp` (`llama-server`, сборка b12406), модель Qwen3-4B-Instruct-2507, GGUF Q4_K_M, контекст 8192 (методичка предлагает 16384;
 на ноутбуке с 8 ГБ ОЗУ он не помещается), 1 слот в экспериментах 1–2 и 4 слота в эксперименте 3, 4 потока. Паспорт сервера, команды запуска
-и журналы — `report/server_passport.md`, `report/server_np*.log`; адрес и параметры генерации — [endpoint.yaml](endpoint.yaml).
+и журналы — `report/server_passport.md` (журналы запуска `logs/server_np*.log` — в архиве артефактов); адрес и параметры генерации — [endpoint.yaml](endpoint.yaml).
 
 ## Структура
 

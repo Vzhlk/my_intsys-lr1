@@ -1,0 +1,4 @@
+clients,ok/planned,throughput_tok_s,rps,ttft_median_s,ttft_p90_s,tpot_median_s,goodput_rps,within_limits,max_processing/deferred
+1,16/16,"2,26","0,018","30,9","32,4","0,202","0,018",да,1.0/0.0
+2,16/16,"2,42","0,019","61,6","64,5","0,343","0,000",нет,2.0/0.0
+4,16/16,"2,90","0,023","94,3","126,7","0,641","0,000",нет,4.0/0.0
