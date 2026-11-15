@@ -1,0 +1,27 @@
+{
+  "tokens": 96,
+  "alone_1_vs_alone_2_identical": true,
+  "alone_vs_concurrent_identical": [
+    false,
+    false
+  ],
+  "concurrent_copies_identical": true,
+  "sha256_alone": [
+    "80c855bea3e048dd417b1e38250d31a30c533fe601f8b97c242df6476fa0f577",
+    "80c855bea3e048dd417b1e38250d31a30c533fe601f8b97c242df6476fa0f577"
+  ],
+  "sha256_concurrent": [
+    "a6f5f7f7c647f35785eb4981fbc3138023f768969cb2aaefa9081b5594a552c0",
+    "a6f5f7f7c647f35785eb4981fbc3138023f768969cb2aaefa9081b5594a552c0"
+  ],
+  "output_tokens": [
+    83,
+    83,
+    80,
+    80
+  ],
+  "first_difference_char_index": [
+    233,
+    233
+  ]
+}
